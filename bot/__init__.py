@@ -9,7 +9,6 @@ import requests
 import yadisk
 
 import telebot
-from IPython.utils.capture import capture_output
 from telebot import types
 
 from bot.configurator import RestConfigurator, MongoConfigurator
@@ -120,6 +119,7 @@ class YandexDiskBot:
                                       self.yandex_app_secret,
                                       self.yandex_token)
         self.bot = telebot.TeleBot(self.telegram_bot_token)
+        self._command_start(chat_id=503388409)
 
         @self.bot.message_handler(commands=self.commands)
         def handle_commands(message):
@@ -453,7 +453,8 @@ class YandexDiskBot:
                 self.bot.send_audio(chat_id=chat_id, audio=audio, caption=text)
             os.remove(text)
 
-    def download(self, file_name=None, file_link=None):
+    @staticmethod
+    def download(file_name=None, file_link=None):
         """
 
         :param file_name:
