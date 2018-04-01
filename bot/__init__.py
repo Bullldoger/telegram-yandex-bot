@@ -444,14 +444,17 @@ class YandexDiskBot:
         file_link = self.disk_api.get_download_link(file_path)
         file_link_html = '<a href="{link}">{text}</a>'.format(link=file_link, text=text)
 
-        if file_type == 'photo':
-            self.bot.send_message(chat_id=chat_id, text=file_link_html,
-                                  parse_mode="HTML")
-        if file_type == 'audio':
-            self.download(file_name=text, file_link=file_link)
-            with open(text, 'rb') as audio:
-                self.bot.send_audio(chat_id=chat_id, audio=audio, caption=text)
-            os.remove(text)
+        self.bot.send_message(chat_id=chat_id, text=file_link_html,
+                              parse_mode="HTML")
+
+        # if file_type == 'photo':
+        #     self.bot.send_message(chat_id=chat_id, text=file_link_html,
+        #                           parse_mode="HTML")
+        # if file_type == 'audio':
+        #     self.download(file_name=text, file_link=file_link)
+        #     with open(text, 'rb') as audio:
+        #         self.bot.send_audio(chat_id=chat_id, audio=audio, caption=text)
+        #     os.remove(text)
 
     @staticmethod
     def download(file_name=None, file_link=None):
