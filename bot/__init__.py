@@ -88,7 +88,7 @@ class YandexDiskBot:
     yandex_app_key = '724f0fc500f24e5c819d73b1c0d7c020'
     yandex_app_secret = '22bee918482c4972957f0cc34a1fbd06'
     yandex_token = 'AQAAAAATRTcCAATojgcA_0RcIkReo7pQ1qaXJ0s'
-    telegram_bot_token = '596764618:AAFfnyH_s6R_u9ZPyF6OH8nZS1q-woRZeoM'
+    telegram_bot_token = '596764618:AAGoSC2Xu_8xM2XJNLsycx3L1rkC3ejQRl8'
 
     current_path = 'disk:/'
     root_path = 'disk:/'
@@ -103,7 +103,8 @@ class YandexDiskBot:
 
     file_types = {
         'photo': ['jpg', 'png'],
-        'audio': ['mp3']
+        'audio': ['mp3'],
+        'document': ['pdf']
     }
 
     event_types = {

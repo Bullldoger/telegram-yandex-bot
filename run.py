@@ -2,10 +2,11 @@ import time
 
 import bot
 
-b = bot.YandexDiskBot()
+
 
 while True:
     try:
+        b = bot.YandexDiskBot()
         b.bot.polling()
     except Exception as ex:
         time.sleep(5)
