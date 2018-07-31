@@ -104,7 +104,8 @@ class YandexDiskBot:
     file_types = {
         'photo': ['jpg', 'png'],
         'audio': ['mp3'],
-        'document': ['pdf']
+        'document': ['pdf'],
+        'video': ['mp4', 'avi']
     }
 
     event_types = {
